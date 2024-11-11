@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg-white rounded-xl shadow-md overflow-hidden">
+    <div class="p-6">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Your Dashboard</h2>
+        <a href="{{ url_for('create_post') }}" class="inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600 mb-6">Create New Post</a>
+        <ul class="space-y-4">
+            {% for post in posts %}
+                <li class="flex items-center justify-between bg-gray-100 p-4 rounded-md">
+                    <span class="text-gray-800">{{ post.title }}</span>
+                    <a href="{{ url_for('view_post', post_id=post.id) }}" class="text-blue-500 hover:text-blue-600">View</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="bg-white rounded-xl shadow-md overflow-hidden">
+    {% if post.image_path %}
+        <img class="w-full h-64 object-cover" src="{{ url_for('static', filename=post.image_path) }}" alt="Blog post image">
+    {% endif %}
+    <div class="p-6">
+        <h2 class="text-3xl font-semibold text-gray-800 mb-4">{{ post.title }}</h2>
+        <p class="text-gray-600 mb-2">Author: {{ post.author.username }}</p>
+        <p class="text-gray-600 mb-6">{{ post.content }}</p>
+
+        {% if current_user.is_authenticated and current_user.id == post.author_id %}
+            <a href="{{ url_for('edit_post', post_id=post.id) }}" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 mb-6 inline-block">Edit Post</a>
+        {% endif %}
+
+        <h3 class="text-2xl font-semibold text-gray-800 mb-4">Comments</h3>
+        <ul class="space-y-4 mb-6">
+            {% for comment in comments %}
+                <li class="bg-gray-100 p-4 rounded-md">
+                    <p class="text-gray-700">{{ comment.content }}</p>
+                    <p class="text-gray-500 text-sm mt-2">By: {{ comment.author.username }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+
+        {% if current_user.is_authenticated %}
+            <form action="{{ url_for('view_post', post_id=post.id) }}" method="POST" class="space-y-4">
+                <textarea name="comment" placeholder="Add a comment" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-100 focus:border-blue-300"></textarea>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Post Comment</button>
+            </form>
+        {% else %}
+            <p class="text-gray-600"><a href="{{ url_for('login') }}" class="text-blue-500 hover:text-blue-600">Login</a> to comment.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
