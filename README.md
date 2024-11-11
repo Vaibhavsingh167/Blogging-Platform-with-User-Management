@@ -14,11 +14,10 @@ A Flask-based blogging platform that enables users to create accounts, publish p
 - **Image Support**: Allows image attachments for posts and displays them on the home page and individual post pages.
 
 ## Output-
-
+![Screenshot 2024-11-11 214924](https://github.com/user-attachments/assets/675f70f7-6990-4247-a516-cd704df6ccb7)
 ![Screenshot 2024-11-11 220452](https://github.com/user-attachments/assets/fefe2e4f-8eb3-473e-b4e4-b578d2968644)
 ![Screenshot 2024-11-11 220402](https://github.com/user-attachments/assets/ce13a316-cb4f-4e68-8a81-2e5f7150fafd)
 ![Screenshot 2024-11-11 220343](https://github.com/user-attachments/assets/0c7d0c00-61cd-4bd2-a71a-3e97edef0ad5)
-![Screenshot 2024-11-11 214924](https://github.com/user-attachments/assets/675f70f7-6990-4247-a516-cd704df6ccb7)
 ![Screenshot 2024-11-11 220624](https://github.com/user-attachments/assets/3c17dd9b-c2ca-43c3-80b9-a1e02db61aeb)
 ![Screenshot 2024-11-11 220606](https://github.com/user-attachments/assets/f536f359-3758-479c-813b-d1cac9694d59)
 ![Screenshot 2024-11-11 220539](https://github.com/user-attachments/assets/181db119-30e8-420e-a11e-6ef6a072f88a)
